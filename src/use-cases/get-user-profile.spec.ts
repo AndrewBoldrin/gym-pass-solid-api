@@ -29,10 +29,10 @@ describe('Get User Profile Use Case', () => {
   })
 
   it('should not be able to authenticate with wrong email', async () => {
-    expect(async () => {
-      await sut.execute({
+    await expect(() =>
+      sut.execute({
         userId: 'non-existing-id',
-      })
-    }).rejects.toBeInstanceOf(ResourceNotFoundError)
+      }),
+    ).rejects.toBeInstanceOf(ResourceNotFoundError)
   })
 })
