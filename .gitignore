@@ -3,3 +3,4 @@ build
 .env
 .env.compose
 coverage
+notes
