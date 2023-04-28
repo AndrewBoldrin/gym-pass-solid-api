@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
 // @ config a nivel de campo
 // @@ config a nivel de tabela
 // @@ map("users") renomeando tabela
@@ -19,6 +24,7 @@ model User {
   name String
   email String @unique
   password_hash String
+  role Role @default(MEMBER)
   created_at DateTime @default(now())
 
   checkIns CheckIn[]
