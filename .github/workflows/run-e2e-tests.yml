@@ -27,5 +27,5 @@ jobs:
       - run: npm ci
       - run: npm run test:e2e
       env:
-        JWT_SECRET: testing
-        DATABASE_URL: "postgresql://test:test@localhost:5432/api?schema=public"
+        JWT_SECRET=testing
+        DATABASE_URL="postgresql://test:test@localhost:5432/api?schema=public"
