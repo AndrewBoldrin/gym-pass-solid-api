@@ -13,9 +13,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          - POSTGRESQL_USERNAME=test
-          - POSTGRESQL_PASSWORD=test
-          - POSTGRESQL_DATABASE=api
+          POSTGRESQL_USERNAME: test
+          POSTGRESQL_PASSWORD: test
+          POSTGRESQL_DATABASE: api
 
     steps:
       - uses: actions/checkout@v3
@@ -27,5 +27,5 @@ jobs:
       - run: npm ci
       - run: npm run test:e2e
       env:
-        JWT_SECRET=testing
-        DATABASE_URL="postgresql://test:test@localhost:5432/api?schema=public"
+        JWT_SECRET: testing
+        DATABASE_URL: "postgresql://test:test@localhost:5432/api?schema=public"
